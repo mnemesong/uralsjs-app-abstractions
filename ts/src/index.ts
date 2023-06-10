@@ -5,7 +5,7 @@ export type Widget<Model, Deps> = (m: Model, id: string, d: Deps) => string;
 
 export type ModelSet<M, Id, D> = {
     widget: Widget<M, D>,
-    idTool: IdTool<number|string>,
+    idTool: IdTool<Id>,
     rootSelector: (el: Rec<M, Id>, d: D) => string,
     initData: (d: D) => M[],
     stor: ReactiveStorage<M, Id>
